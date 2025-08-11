@@ -14,7 +14,10 @@
     <div class="nav-container">
       <img src="../public/logo.png" alt="SDS Jamboree Logo" class="logo">
       <span class="site-title">SDS Jamboree 2026</span>
-      <ul class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html"><i class="fas fa-home"></i> Back to main page</a></li>
       </ul>
     </div>
@@ -30,7 +33,12 @@
     <input type="text" name="fullname" required>
   </label>
   <label>Group Name
-    <input type="text" name="groupname" required>
+   <select name="groupname" required>
+              <option value="" disabled selected>Select your group</option>
+              <option value="Group A">Group A</option>
+              <option value="Group B">Group B</option>
+              <option value="Group C">Group C</option>
+            </select>
   </label>
   <label>File ID
     <input type="text" name="fileid" required>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registration Dashboard - SDS Jamboree 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="../public/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <img src="../../public/logo.png" alt="SDS Jamboree Logo" class="logo" />
+      <span class="site-title">SDS Jamboree 2026 - Dashboard</span>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Registration Status Dashboard</h1>
+    <section id="summary">
+      <h2>Summary</h2>
+      <div class="stats">
+        <div class="stat-item">
+          <h3>Total Registrations</h3>
+          <p id="total-registrations">Loading...</p>
+        </div>
+        <div class="stat-item">
+          <h3>Staff Registrations</h3>
+          <p id="staff-registrations">Loading...</p>
+        </div>
+        <div class="stat-item">
+          <h3>Participant Registrations</h3>
+          <p id="participant-registrations">Loading...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="details">
+      <h2>Recent Registrations</h2>
+      <table id="registrations-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Group</th>
+            <th>Date</th>
+            <th>Role / Participant</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be populated here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="main.js"></script>
+</body>
+</html>

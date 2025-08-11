@@ -2,6 +2,65 @@ const SUPABASE_URL = 'https://onbnxhvmgtvrqqdhwzgu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uYm54aHZtZ3R2cnFxZGh3emd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ2NDY0ODYsImV4cCI6MjA3MDIyMjQ4Nn0.5KA7-MBABegAgZDOFkrzDOtNdcZ4dWHJ8H3LVthL-Hk';
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// Mobile navigation for staff-registration.html
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (navToggle && navLinks) {
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      
+      // Change icon between hamburger and X
+      const icon = navToggle.querySelector('i');
+      if (isOpen) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        const icon = navToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close menu when clicking a link (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('active');
+          const icon = navToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        const icon = navToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  }
+});
+
 const staffForm = document.getElementById('staffForm');
 
 // Insert error message container above the submit button if not present

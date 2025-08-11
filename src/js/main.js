@@ -204,10 +204,57 @@ document.querySelector('.registration-form form').addEventListener('submit', asy
 document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
+  
   if (navToggle && navLinks) {
+    // Toggle mobile menu
     navToggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      
+      // Change icon between hamburger and X
+      const icon = navToggle.querySelector('i');
+      if (isOpen) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        const icon = navToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close menu when clicking a link (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('active');
+          const icon = navToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        const icon = navToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
     });
   }
-  
 });

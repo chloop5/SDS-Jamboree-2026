@@ -68,32 +68,109 @@ a:hover {
   background: none;
   border: none;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  margin-left: 1rem;
+  margin-left: auto;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 700px) {
+.nav-toggle:hover {
+  transform: scale(1.1);
+}
+
+.nav-toggle .fa-bars,
+.nav-toggle .fa-times {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-toggle .fa-times {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.nav-toggle.active .fa-bars {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.nav-toggle.active .fa-times {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+@media (max-width: 768px) {
   .nav-toggle {
     display: block;
   }
+  
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0;
     width: 100%;
-    padding-left: 0;
+    padding: 0;
     background: #388e3c;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
-    z-index: 99;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
+  
   .nav-links.open {
     display: flex;
+    transform: translateY(0);
+    opacity: 1;
   }
+  
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 1rem;
+    color: #fff;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffd600;
+  }
+  
   .nav-container {
     position: relative;
+    flex-wrap: wrap;
+  }
+  
+  .site-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0.5rem;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .site-title {
+    font-size: 1.1rem;
   }
 }
 
@@ -124,6 +201,71 @@ a:hover {
     display: block;
     width: 100%;
     padding: 0.5rem 0;
+  }
+}
+
+/* Additional mobile-friendly styles for staff-registration.html */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    padding: 0;
+    background: #388e3c;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .nav-links.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 1rem;
+    color: #fff;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffd600;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0.5rem;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .site-title {
+    font-size: 1.1rem;
   }
 }
 

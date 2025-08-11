@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDS Jamboree 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="../public/logo.png">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+  <div class="nav-container">
+    <img src="../public/logo.png" alt="SDS Jamboree Logo" class="logo">
+    <span class="site-title">SDS Jamboree 2026</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#header"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#activities"><i class="fas fa-campground"></i> Activities</a></li>
+      <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="staff-registration.html"><i class="fas fa-user-tie"></i> Staff Registration</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Header Section -->
+  <header id="header" class="header-section">
+    <div class="header-bg">
+      <!-- Add background image with CSS -->
+      <div class="header-content">
+        <h1><i class="fas fa-tree"></i> Join the adventure!</h1>
+        <p><i class="fas fa-calendar-alt"></i> 1 - 3 May 2026</p>
+        <div id="countdown" class="countdown"></div>
+       <div ><a href="#activities" class="register-btn"><i class="fas fa-user-plus"></i> Register Now</a></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2><i class="fas fa-info-circle"></i> About the Event</h2>
+    <p>Placeholder description about SDS Jamboree 2026. Add details about the event, its purpose, and what participants can expect.</p>
+  </section>
+
+  <!-- Activities & Registration Section -->
+  <section id="activities" class="activities-section">
+    <div class="activities-container">
+      <div class="activities-list" id="activities-list">
+        <h2><i class="fas fa-campground"></i> Featured Activities</h2>
+        
+        
+      </div>
+      <div class="registration-form">
+        <h2><i class="fas fa-user-plus"></i> Participant Registration</h2>
+        <form>
+          <label>Full Name
+            <input type="text" name="fullname" required>
+          </label>
+          <label>Group Name
+            <input type="text" name="groupname" required>
+          </label>
+          <label>File ID
+            <input type="text" name="fileid" required>
+          </label>
+          <label>Participant as:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="participant" value="Louveteaux-Jeannettes" required> Louveteaux-Jeannettes</label>
+            <label><input type="radio" name="participant" value="Scouts-Guides"> Scouts-Guides</label>
+            <label><input type="radio" name="participant" value="Routiers-Caravelles"> Routiers-Caravelles</label>
+          </div>
+          <label>Age
+            <input type="number" name="age" min="7" required>
+          </label>
+          <label>Gender:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+          </div>
+          <label>Email
+            <input type="email" name="email" placeholder="example@email.com" required>
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" placeholder="00 000 000" required>
+          </label>
+          <label>Select up to 3 activities:</label>
+          <div class="activities-checkboxes">
+            
+          </div>
+          <button type="submit" class="register-btn"><i class="fas fa-paper-plane"></i> Submit Registration</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>Who can participate?</h4>
+        <p>All scouts aged 7 and above can join the event.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Where is the event located?</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 34°02'24.2"N 35°41'36.9"E</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do I register?</h4>
+        <p>Use the registration form above to sign up for activities.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How many activities can I join?</h4>
+        <p>You can select up to 3 activities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+    <p><i class="fas fa-envelope"></i> Email: com.generale@scoutsdesecours.org</p>
+    <p><i class="fas fa-phone"></i> Phone: 03 747 692</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Scouts de Secours Libanais - Commissariat Général</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_
 
 // Countdown Timer for Jamboree Date
 function startCountdown() {
-  const eventDate = new Date('2026-05-01T00:00:00');
+  const eventDate = new Date('2026-05-15T00:00:00');
   const countdownEl = document.getElementById('countdown');
   if (!countdownEl) return;
 
